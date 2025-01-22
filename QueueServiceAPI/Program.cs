@@ -1,4 +1,6 @@
 
+using QueueServiceAPI.Services;
+
 namespace QueueServiceAPI
 {
     public class Program
@@ -6,8 +8,9 @@ namespace QueueServiceAPI
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-
+            
             // Add services to the container.
+            builder.Services.AddSingleton<IQueueService, QueueService>();
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

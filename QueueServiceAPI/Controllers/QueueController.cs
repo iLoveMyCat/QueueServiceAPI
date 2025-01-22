@@ -5,7 +5,7 @@ using QueueServiceAPI.Services;
 namespace QueueServiceAPI.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]/[action]")]
     public class QueueController : Controller
     {
         private readonly IQueueService _queueService;
@@ -56,16 +56,16 @@ namespace QueueServiceAPI.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetSnapshot([FromBody] SnapshotRequest request)
+        public IActionResult GetSnapshot([FromQuery] string? queueName = "defaultQueue")
         {
             try
             {
-                var snapshot = _queueService.GetSnapshot(request.QueueName);
+                var snapshot = _queueService.GetSnapshot(queueName);
                 if (snapshot == null)
                 {
-                    return NotFound("Queue not found."); 
+                    return NotFound("queue not found."); 
                 }
-                return Ok(snapshot); 
+                return Ok(string.Join(",",snapshot)); 
             }
             catch (ArgumentException ex)
             {

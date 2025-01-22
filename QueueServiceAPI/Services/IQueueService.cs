@@ -4,6 +4,6 @@
     {
         void Enqueue(string queueName, string item);
         string Dequeue(string queueName);
-        string GetSnapshot(string queueName);
+        IEnumerable<string> GetSnapshot(string queueName);
     }
 }

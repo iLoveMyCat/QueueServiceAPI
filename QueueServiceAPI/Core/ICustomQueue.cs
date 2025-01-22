@@ -4,6 +4,8 @@
     {
         void Enqueue(string item);
         string Dequeue();
-        string GetSnapshot();
+        IEnumerable<string> GetSnapshot();
+
+        bool IsEmpty();
     }
 }
