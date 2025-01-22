@@ -5,6 +5,8 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueueServiceAPI", "QueueServiceAPI\QueueServiceAPI.csproj", "{E4F689DE-3224-40B6-B468-84FA01F5D1DA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueueServiceAPI.Test", "QueueServiceAPI.Test\QueueServiceAPI.Test.csproj", "{588F33F6-7647-46BE-B98E-22A946C1AD66}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{E4F689DE-3224-40B6-B468-84FA01F5D1DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E4F689DE-3224-40B6-B468-84FA01F5D1DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E4F689DE-3224-40B6-B468-84FA01F5D1DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{588F33F6-7647-46BE-B98E-22A946C1AD66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{588F33F6-7647-46BE-B98E-22A946C1AD66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{588F33F6-7647-46BE-B98E-22A946C1AD66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{588F33F6-7647-46BE-B98E-22A946C1AD66}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
