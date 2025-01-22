@@ -39,21 +39,22 @@ namespace QueueServiceAPI.Controllers
             try
             {
                 var item = _queueService.Dequeue(request.QueueName);
-                if (item == null)
-                {
-                    return NotFound("No items in the queue.");
-                }
                 return Ok(item);
+            }
+            catch (InvalidOperationException ex)
+            {
+                return NotFound(ex.Message);
             }
             catch (ArgumentException ex)
             {
-                return BadRequest(ex.Message); 
+                return BadRequest(ex.Message);
             }
             catch (Exception)
             {
-                return StatusCode(500, "An unexpected error occurred."); 
+                return StatusCode(500, "An unexpected error occurred.");
             }
         }
+
 
         [HttpGet]
         public IActionResult GetSnapshot([FromQuery] string? queueName = "defaultQueue")
